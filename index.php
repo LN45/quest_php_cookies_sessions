@@ -1,4 +1,9 @@
 <?php require 'inc/head.php';
+
+if (!isset($_SESSION['loginname'])){
+    header('Location: login.php');
+}
+
 $_SESSION['panier'][]=[];
 if ($_GET){
     if(array_key_exists($_GET['add_to_cart'],$_SESSION['panier'])){

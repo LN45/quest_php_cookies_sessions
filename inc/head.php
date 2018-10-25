@@ -54,6 +54,13 @@ session_start();
     </div><!-- /.container-fluid -->
   </nav>
   <div class="container-fluid text-right">
-    <strong><?php echo 'Hello Wilder'; ?></strong>
+      <?php
+        if(isset($_SESSION['loginname'])): ?>
+            <strong><?php echo 'Hello '.$_SESSION['loginname']; ?></strong>
+      <?php endif;?>
+      <?php
+      if(!isset($_SESSION['loginname'])): ?>
+          <strong><?php echo 'Hello Wilder'; ?></strong>
+      <?php endif;?>
   </div>
 </header>
